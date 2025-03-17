@@ -7,7 +7,7 @@
 	</actions>
 	<menus>
 		<menu name="starpoint" type="all">
-			<title xml:lang="ko">게시글 별점리뷰</title>
+			<title xml:lang="ko">게시글 별 평점</title>
 		</menu>
 	</menus>
 </module>
