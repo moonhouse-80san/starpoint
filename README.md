@@ -23,7 +23,9 @@
 
  
 
+
 /modules/board/skins/sketchbook5/_read.html 의 적당한 위치에 추가
+
 <include cond="!$mi->star_point ==''" target="/modules/starpoint/tpl/rating.html" />
 
  
