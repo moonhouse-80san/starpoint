@@ -9,24 +9,17 @@
  
 
 /modules/board/skins/sketchbook5/skin.xml 에 추가
+![image](https://github.com/user-attachments/assets/7790ba54-73b1-42ed-aa8b-54ccf958c6a4)
 
-<var name="star_point" type="radio">
-    <title>게시글 별 평점 모듈 사용</title>
-    <description>게시글 별 평점 모듈이 설치되어 있어야 합니다.</description>
-    <options value="">
-        <title>모듈 설치 안됨(기본)</title>
-    </options>
-    <options value="Y">
-        <title>모듈 설치</title>
-    </options>
-</var>
+
 
  
 
 
 /modules/board/skins/sketchbook5/_read.html 의 적당한 위치에 추가
+![image](https://github.com/user-attachments/assets/67a5b52a-5ad1-4554-ac2b-09fc44e9b315)
 
-<include cond="!$mi->star_point ==''" target="/modules/starpoint/tpl/rating.html" />
+
 
  
 
@@ -35,16 +28,19 @@
 
 [비로그인 화면]
 
-게시글 별 평점 모듈 - 문하우스 : image.png
+![image](https://github.com/user-attachments/assets/efa2fd5e-989f-4d01-ad7b-39d20707e594)
+
 
  
 
 [로그인 회원 화면]
 
-게시글 별 평점 모듈 - 문하우스 : image.png
+![image](https://github.com/user-attachments/assets/92d57540-2e63-4a22-9069-aa12f10c497a)
+
 
  
 
 [평점후 화면]
 
-게시글 별 평점 모듈 - 문하우스 : image.png
+![image](https://github.com/user-attachments/assets/120b1f37-b4e6-4716-90af-f08a8b8d77bd)
+
