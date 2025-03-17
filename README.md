@@ -9,17 +9,16 @@
  
 
 /modules/board/skins/sketchbook5/skin.xml 에 추가
+
+
 ![image](https://github.com/user-attachments/assets/7790ba54-73b1-42ed-aa8b-54ccf958c6a4)
 
 
 
- 
-
-
 /modules/board/skins/sketchbook5/_read.html 의 적당한 위치에 추가
+
+
 ![image](https://github.com/user-attachments/assets/67a5b52a-5ad1-4554-ac2b-09fc44e9b315)
-
-
 
  
 
