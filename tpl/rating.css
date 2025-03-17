@@ -1,149 +1,150 @@
-/* rating.css - 별점 위젯 스타일 */
 .rating-widget {
-    margin: 10px 0;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    max-width:450px;
+	margin: 10px 0;
+	padding: 15px;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	max-width:450px;
 	float:right;
 }
 
 .rating-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #333;
 }
 
 .rating-stats {
-    background: #f0f0f0;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 15px;
+	background: #f0f0f0;
+	border-radius: 4px;
+	padding: 10px;
+	margin-bottom: 15px;
 }
 
 .stat-item {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .stat-item .label {
-    font-weight: bold;
-    color: #555;
-    margin-right: 5px;
+	font-weight: bold;
+	color: #555;
+	margin-right: 5px;
 }
 
 .stat-item .value {
-    color: #333;
+	color: #333;
 }
 
 .rating-average {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
 }
 
 .label {
-	min-width:80px; color:#666; font-size:14px; 
+	min-width:80px; 
+	color:#666; 
+	font-size:14px; 
 }
 
 .stars {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .star {
-    font-size: 24px;
-    color: #ddd;
-    margin-right: 5px;
-    cursor: default;
+	font-size: 24px;
+	color: #ddd;
+	margin-right: 5px;
+	cursor: default;
 }
 
 .star.filled {
-    color: #ffb400;
+	color: #ffb400;
 }
 
 .star.half-filled {
-    position: relative;
-    color: #ddd;
+	position: relative;
+	color: #ddd;
 }
 
 .star.half-filled:before {
-    content: '★';
-    position: absolute;
-    left: 0;
-    width: 50%;
-    overflow: hidden;
-    color: #ffb400;
+	content: '★';
+	position: absolute;
+	left: 0;
+	width: 50%;
+	overflow: hidden;
+	color: #ffb400;
 }
 
 .score {
-    margin-left: 8px;
-    font-weight: bold;
-    color: #333;
-    font-size: 18px;
+	margin-left: 8px;
+	font-weight: bold;
+	color: #333;
+	font-size: 18px;
 }
 
 .rating-form {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px dashed #ddd;
+	margin-top: 20px;
+	padding-top: 15px;
+	border-top: 1px dashed #ddd;
 }
 
 .my-rating {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
 }
 
 .star-select {
-    cursor: pointer;
-    transition: transform 0.1s, color 0.2s;
+	cursor: pointer;
+	transition: transform 0.1s, color 0.2s;
 }
 
 .star-select:hover, 
 .star-select.hover {
-    color: #ffb400;
-    transform: scale(1.2);
+	color: #ffb400;
+	transform: scale(1.2);
 }
 
 .star-select.selected {
-    color: #ffb400;
+	color: #ffb400;
 }
 
 .selected-rating {
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 16px;
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 16px;
 }
 
 .submit-button {
-    text-align: center;
-    margin-top: 10px;
+	text-align: center;
+	margin-top: 10px;
 }
 
 .submit-button button {
-    padding: 8px 20px;
-    background-color: #4a89dc;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+	padding: 8px 20px;
+	background-color: #4a89dc;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background-color 0.2s;
 }
 
 .submit-button button:hover {
-    background-color: #3a79cc;
+	background-color: #3a79cc;
 }
 
 .already-rated,
 .login-required {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    color: #666;
-    text-align: center;
-    font-size: 14px;
+	margin-top: 15px;
+	padding: 10px;
+	background-color: #f1f1f1;
+	border-radius: 4px;
+	color: #666;
+	text-align: center;
+	font-size: 14px;
 }

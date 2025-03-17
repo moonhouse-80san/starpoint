@@ -1,8 +1,3 @@
-/**
- * 별점 평가 JavaScript 함수
- * rating.html과 연동하여 작동합니다.
- */
-
 // 문서에 별점 평가하기
 function doRate(document_srl, rate_srl){
 	if (!confirm("한번 평가한 점수는 취소되지 않습니다.\n정말 평가 하시겠습니까?")) return;
