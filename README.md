@@ -9,6 +9,7 @@
  
 
 /modules/board/skins/sketchbook5/skin.xml 에 추가
+
 <var name="star_point" type="radio">
     <title>게시글 별 평점 모듈 사용</title>
     <description>게시글 별 평점 모듈이 설치되어 있어야 합니다.</description>
