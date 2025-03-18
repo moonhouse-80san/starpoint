@@ -9,10 +9,11 @@
 	$my_starpoint = $oStarPointModel->getIsRated($oDocument->document_srl);
 	$total_point = $oStarPointModel->getDocumentRatedTotalPoint($oDocument->document_srl);
 	if($my_starpoint) $my_s = 'Y';
+	if(!$mi->starpoint_text) $mi->starpoint_text = '글';
 }
 
 <div class="rating-widget">
-	<div class="rating-title">이 글의 평점 ({$total_point->count_members} 참여)</div>
+	<div class="rating-title">이 {$mi->starpoint_text}의 평점 ({$total_point->count_members} 참여)</div>
 	<div class="rating-stats">
 		<div class="stat-item">
 			<span class="label">총 점수 :</span>
@@ -30,31 +31,35 @@
 			<!--@for($i=1;$i<=5;$i++)-->
 				<span class="star {$total_point->avg >= $i ? 'filled' : ($total_point->avg >= $i-0.5 ? 'half-filled' : 'empty')}">★</span>
 			<!--@end-->
-			<span class="score">{number_format($total_point->avg, 1)}</span>
+			<span class="score">{number_format($total_point->avg, 1)}점</span>
 		</div>
 	</div>
 	
 	<!--@if($is_logged && $my_s != 'Y')-->
-		<div class="rating-form">
-			<div class="my-rating">
-				<div class="label">내 평점 :</div>
-				<div class="stars" id="star-selector">
-					<!--@for($i=1;$i<=5;$i++)-->
-					<span class="star star-select" data-value="{$i}">★</span>
-					<!--@end-->
+		<!--@if(abs($oDocument->get('member_srl'))!==$logged_info->member_srl)-->
+			<div class="rating-form">
+				<div class="my-rating">
+					<div class="label">내 평점 :</div>
+					<div class="stars" id="star-selector">
+						<!--@for($i=1;$i<=5;$i++)-->
+						<span class="star star-select" data-value="{$i}">★</span>
+						<!--@end-->
+					</div>
+					<div class="selected-rating">
+						<span id="selected-value">0</span>점
+					</div>
 				</div>
-				<div class="selected-rating">
-					<span id="selected-value">0</span>점
-				</div>
+					<div class="submit-button">
+						<button type="button" class="spb" id="submit-rating">평가하기</button>
+					</div>
 			</div>
-			<div class="submit-button">
-				<button type="button" id="submit-rating">평가하기</button>
-			</div>
-		</div>
+		<!--@else-->
+			<div class="login-required">본인의 글은 평가할 수 없습니다.</div>
+		<!--@end-->
 	<!--@elseif($is_logged && $my_s = 'Y')-->
 		<div class="already-rated">
 		<div class="my-rating-display">
-			<div class="label">내가 평가한 점수:</div>
+			<div class="label">내가 평가한 점수 :</div>
 			<div class="stars" style="display: inline-block;">
 				<!--@if(is_object($my_starpoint) && isset($my_starpoint->star_rate))-->
 					<!--@for($i=1;$i<=5;$i++)-->

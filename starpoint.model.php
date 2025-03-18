@@ -48,8 +48,9 @@ class StarpointModel extends Starpoint
         $args->document_srl = $document_srl;
         $args->member_srl = $logged_info->member_srl;
         $args->star_rate = $star_srl;
+		$args->sort_index = 'regdate';
 
-        $result = executeQuery('starpoint.insertStarRate', $args);
+		$result = executeQuery('starpoint.insertStarRate', $args);
 
         return false;
 

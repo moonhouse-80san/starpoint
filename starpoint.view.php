@@ -1,7 +1,7 @@
 <?php
 /**
  * @class  starpointView
- * @author Claude
+ * @author 80san
  * @brief 별점(평점) 모듈의 View 클래스
  */
 class starpointView extends starpoint
