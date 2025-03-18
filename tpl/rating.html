@@ -13,17 +13,7 @@
 }
 
 <div class="rating-widget">
-	<div class="rating-title">이 {$mi->starpoint_text}의 평점 ({$total_point->count_members} 참여)</div>
-	<div class="rating-stats">
-		<div class="stat-item">
-			<span class="label">총 점수 :</span>
-			<span class="value">{$total_point->sum}</span>
-		</div>
-		<div class="stat-item">
-			<span class="label">평균 점수 :</span>
-			<span class="value">{number_format($total_point->avg, 1)}</span>
-		</div>
-	</div>
+	<div class="rating-title">이 {$mi->starpoint_text}의 평점 (참여 : {$total_point->count_members} / 총 점수 : {$total_point->sum})</div>
 	
 	<div class="rating-average">
 		<div class="label">평균 평점 :</div>
