@@ -1,15 +1,19 @@
+.rating-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .rating-widget {
-	margin:10px;
-	padding: 15px;
-	border: 1px solid #e0e0e0;
-	border-radius: 5px;
-	background-color: #f9f9f9;
-	max-width:450px;
-	float:right;
+  margin:10px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-width:450px;
 }
 
 .rating-title {
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: bold;
 	color: #333;
 }
@@ -55,7 +59,7 @@
 }
 
 .star {
-	font-size: 24px;
+	font-size: 20px;
 	color: #ddd;
 	margin-right: 5px;
 	cursor: default;
@@ -83,7 +87,7 @@
 	margin-left: 8px;
 	font-weight: bold;
 	color: #333;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .rating-form {
