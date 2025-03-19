@@ -2,4 +2,5 @@
     <column name="document_srl" type="number" size="11" notnull="notnull" />
     <column name="member_srl" type="number" size="11" notnull="notnull" />
     <column name="star_rate" type="number" size="11" notnull="notnull" />
+	<column name="regdate" type="date" notnull="notnull" />
 </table>
