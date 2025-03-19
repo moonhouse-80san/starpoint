@@ -14,7 +14,6 @@ class StarpointController extends Starpoint
 		//이때 star_srl은 숫자만 필터링 되기 위한 꼼수(?) 입니다.
 		$document_srl = Context::get('doc_srl');
 		$star_srl = Context::get('star_srl');
-		$args->regdate = date('YmdHis');
 
 		if(!$document_srl || !$star_srl){
 			return new BaseObject(-1, '잘못 된 요청입니다');
