@@ -9,12 +9,12 @@
 	$my_starpoint = $oStarPointModel->getIsRated($oDocument->document_srl);
 	$total_point = $oStarPointModel->getDocumentRatedTotalPoint($oDocument->document_srl);
 	if($my_starpoint) $my_s = 'Y';
-	if(!$module_info->starpoint_text) $module_info->starpoint_text = '글';
+	if(!$mi->starpoint_text) $mi->starpoint_text = '글';
 }
 
 <div class="rating-container">
 	<div class="rating-widget">
-		<div class="rating-title">이 {$module_info->starpoint_text}의 평점 (참여 : {$total_point->count_members} / 총 점수 : {$total_point->sum})</div>
+		<div class="rating-title">이 {$mi->starpoint_text}의 평점 (참여 : {$total_point->count_members} / 총 점수 : {$total_point->sum})</div>
 		
 		<div class="rating-average">
 			<div class="label">평균 평점 :</div>
