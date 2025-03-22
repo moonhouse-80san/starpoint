@@ -43,7 +43,16 @@ class Starpoint extends ModuleObject
 	 */
 	public function moduleInstall()
 	{
-
+		// 트리거 등록
+		$oModuleController = getController('module');
+		
+		// 문서 출력 시 별점 표시 트리거
+		$oModuleController->insertTrigger('document.getDocumentEnd', 'starpoint', 'controller', 'triggerGetDocumentEnd', 'after');
+		
+		// 별점 모듈 템플릿에 추가할 트리거
+		$oModuleController->insertTrigger('document.showDocument', 'starpoint', 'controller', 'triggerShowDocument', 'after');
+		
+		return new BaseObject();
 	}
 
 	/**
@@ -55,7 +64,17 @@ class Starpoint extends ModuleObject
 	 */
 	public function checkUpdate()
 	{
-
+		$oModuleModel = getModel('module');
+		
+		// 문서 출력 시 별점 표시 트리거 확인
+		if(!$oModuleModel->getTrigger('document.getDocumentEnd', 'starpoint', 'controller', 'triggerGetDocumentEnd', 'after'))
+			return true;
+		
+		// 별점 모듈 템플릿에 추가할 트리거 확인
+		if(!$oModuleModel->getTrigger('document.showDocument', 'starpoint', 'controller', 'triggerShowDocument', 'after'))
+			return true;
+		
+		return false;
 	}
 
 	/**
@@ -67,7 +86,18 @@ class Starpoint extends ModuleObject
 	 */
 	public function moduleUpdate()
 	{
-
+		$oModuleModel = getModel('module');
+		$oModuleController = getController('module');
+		
+		// 문서 출력 시 별점 표시 트리거 등록
+		if(!$oModuleModel->getTrigger('document.getDocumentEnd', 'starpoint', 'controller', 'triggerGetDocumentEnd', 'after'))
+			$oModuleController->insertTrigger('document.getDocumentEnd', 'starpoint', 'controller', 'triggerGetDocumentEnd', 'after');
+		
+		// 별점 모듈 템플릿에 추가할 트리거 등록
+		if(!$oModuleModel->getTrigger('document.showDocument', 'starpoint', 'controller', 'triggerShowDocument', 'after'))
+			$oModuleController->insertTrigger('document.showDocument', 'starpoint', 'controller', 'triggerShowDocument', 'after');
+		
+		return new BaseObject();
 	}
 
 	/**
@@ -77,6 +107,7 @@ class Starpoint extends ModuleObject
 	 */
 	public function recompileCache()
 	{
-
+		// 별점 모듈 설정 캐시 삭제
+		FileHandler::removeFilesInDir('./files/cache/starpoint');
 	}
 }

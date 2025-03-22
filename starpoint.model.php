@@ -15,7 +15,7 @@ class StarpointModel extends Starpoint
 
 		$logged_info = Context::get('logged_info');
 		if(!$logged_info){
-			return new BaseObject(-1, '잘못 된 요청입니다.');
+			return new BaseObject(-1, '로그인이 필요합니다.');
 		}
 
 		$args = new stdClass();
@@ -41,19 +41,56 @@ class StarpointModel extends Starpoint
 	public static function insertStarRate($document_srl, $star_srl){
 		$logged_info = Context::get('logged_info');
 		if(!$logged_info){
-			return new BaseObject(-1, '잘못 된 요청입니다.');
+			return new BaseObject(-1, '로그인이 필요합니다.');
+		}
+
+        $args = new stdClass();
+        $args->document_srl = $document_srl;
+        $args->member_srl = $logged_info->member_srl;
+        $args->star_rate = $star_srl;
+        $args->regdate = date('YmdHis'); // 현재 시간을 YYYYMMDDhhmmss 형식으로 저장
+
+		$result = executeQuery('starpoint.insertStarRate', $args);
+
+		return $result;
+	}
+
+	/**
+	 * @brief 사용자가 평가한 별점 정보 가져오기
+	 * @param int $document_srl 문서 일련번호
+	 * @param int $member_srl 회원 일련번호
+	 * @return object 별점 정보
+	 */
+	public function getUserRating($document_srl, $member_srl = null) {
+		if (!$member_srl) {
+			$logged_info = Context::get('logged_info');
+			if (!$logged_info) return null;
+			$member_srl = $logged_info->member_srl;
 		}
 
 		$args = new stdClass();
 		$args->document_srl = $document_srl;
-		$args->member_srl = $logged_info->member_srl;
-		$args->star_rate = $star_srl;
-		$args->sort_index = 'regdate';
+		$args->member_srl = $member_srl;
 
-		$result = executeQuery('starpoint.insertStarRate', $args);
-
-		return false;
-
+		$output = executeQuery('starpoint.getRatingByMember', $args);
+		if (!$output->toBool() || !$output->data) return null;
+		
+		return $output->data;
 	}
 
+	/**
+	 * @brief 문서의 평점 통계 정보 가져오기
+	 * @param int $document_srl 문서 일련번호
+	 * @return object 평점 통계 정보
+	 */
+	public function getStarPointStatistics($document_srl) {
+		$args = new stdClass();
+		$args->document_srl = $document_srl;
+
+		// 평균 평점과 평가 수 가져오기
+		$output = executeQuery('starpoint.getRatingStatistics', $args);
+		if (!$output->toBool()) return $output;
+
+		return $output->data;
+	}
 }

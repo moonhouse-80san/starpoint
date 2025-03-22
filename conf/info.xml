@@ -2,8 +2,8 @@
 <module version="0.2">
 	<title xml:lang="ko">게시글 별 평점</title>
 	<description xml:lang="ko">게시글에 별모양 평점을 부여하는 모듈입니다.</description>
-	<version>1.2</version>
-	<date>2025-03-19</date>
+	<version>1.3</version>
+	<date>2025-03-22</date>
 	<author email_address="icetea@wonder-rabbit.com" link="https://wonder-rabbit.com">
 		<name xml:lang="ko">ICETEA</name>
 	</author>
