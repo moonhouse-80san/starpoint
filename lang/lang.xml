@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lang>
-	<item name="cmd_starpoint">
-		<value xml:lang="ko"><![CDATA[게시글 별점리뷰]]></value>
+	<item name="starpoint">
+		<value xml:lang="ko"><![CDATA[게시글 별 평점]]></value>
 	</item>
-	<item name="cmd_starpoint_general_config">
-		<value xml:lang="ko"><![CDATA[기본 설정]]></value>
+	<item name="starpoint_module_config">
+		<value xml:lang="ko"><![CDATA[게시글 별 평점 설정]]></value>
 	</item>
-	<item name="cmd_starpoint_example_config">
-		<value xml:lang="ko"><![CDATA[예제 설정]]></value>
+	<item name="select_target_mid">
+		<value xml:lang="ko"><![CDATA[평점 사용할 게시판 선택]]></value>
+	</item>
+	<item name="about_target_mid">
+		<value xml:lang="ko"><![CDATA[별 모양 평점을 사용할 게시판을 선택하세요. 다중 선택이 가능합니다. (Ctrl 키를 누른 상태로 선택)]]></value>
+	</item>
+	<item name="success_saved">
+		<value xml:lang="ko"><![CDATA[설정이 저장되었습니다.]]></value>
 	</item>
 </lang>

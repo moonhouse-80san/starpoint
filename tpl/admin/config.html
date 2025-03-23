@@ -1,0 +1,23 @@
+<div class="x_page-header">
+    <h1>평점 모듈 설정</h1>
+</div>
+
+<ul class="x_nav x_nav-tabs">
+    <li class="x_active"|cond="$act == 'dispStarpointAdminConfig'"><a href="{getUrl('', 'module', 'admin', 'act', 'dispStarpointAdminConfig')}">기본 설정</a></li>
+</ul>
+
+<div class="x_panel">
+	<div class="x_panel-heading">
+		<h2>기본 설정</h2>
+	</div>
+	<div class="x_panel-body">
+		<form action="./" method="post" class="x_form-horizontal">
+			<input type="hidden" name="module" value="starpoint" />
+			<input type="hidden" name="act" value="procStarpointAdminInsertConfig" />
+
+			<div class="btnArea">
+				<button type="submit" class="x_btn x_btn-primary">저장</button>
+			</div>
+		</form>
+	</div>
+</div>
