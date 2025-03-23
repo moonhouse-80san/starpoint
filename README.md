@@ -1,6 +1,9 @@
+정상적인 버전 다운로드는 V1.3을 받으세요</br>
+https://github.com/moonhouse-80san/starpoint/archive/refs/tags/V1.3.zip
+
 [설치 방법]
 
-moonhouse.co.kr/xemy/598200
+https://moonhouse.co.kr/xemy/598200
 
 1. 다운 받은 모듈을 설치 - 관리자 설정 없음
 
