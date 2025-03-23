@@ -15,6 +15,18 @@
 			<input type="hidden" name="module" value="starpoint" />
 			<input type="hidden" name="act" value="procStarpointAdminInsertConfig" />
 
+			<div class="x_control-group">
+				<label class="x_control-label">대상 모듈</label>
+				<div class="x_controls">
+					<select name="target_modules[]" multiple="multiple" size="20">
+						<!--@foreach($module_list as $key => $val)-->
+						<option value="{$key}" selected="selected"|cond="in_array($key, $config->target_modules)">{$val->browser_title} ({$key})</option>
+						<!--@end-->
+					</select>
+					<p class="x_help-block">평점 모듈을 사용할 대상 모듈을 선택하세요. 선택하지 않으면 모든 모듈에 적용됩니다.</p>
+				</div>
+			</div>
+
 			<div class="btnArea">
 				<button type="submit" class="x_btn x_btn-primary">저장</button>
 			</div>
