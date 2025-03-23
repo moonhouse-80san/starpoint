@@ -93,33 +93,4 @@ class StarpointModel extends Starpoint
 
 		return $output->data;
 	}
-
-	/**
-	 * @brief 모듈 설정 가져오기
-	 * @return object 모듈 설정 객체
-	 */
-	public function getConfig() {
-		static $config = null;
-		if(is_null($config)) {
-			$oModuleModel = getModel('module');
-			$config = $oModuleModel->getModuleConfig('starpoint');
-			if(!$config) {
-				$config = new stdClass();
-			}
-			
-			// 기본값 설정
-			if(!isset($config->target_mid)) $config->target_mid = array();
-		}
-		return $config;
-	}
-	
-	/**
-	 * @brief 해당 모듈이 별점 사용이 가능한지 확인
-	 * @param int $module_srl 모듈 일련번호
-	 * @return bool 별점 사용 가능 여부
-	 */
-	public function isStarpointEnabled($module_srl) {
-		$config = $this->getConfig();
-		return in_array($module_srl, $config->target_mid);
-	}
 }
