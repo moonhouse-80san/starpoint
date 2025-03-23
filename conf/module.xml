@@ -8,7 +8,8 @@
 		
 		<!-- Admin Actions -->
 		<action name="dispStarpointAdminConfig" type="view" admin_index="true" />
-		<action name="procStarpointAdminSaveConfig" type="controller" method="POST" />
+		<action name="procStarpointAdminInsertConfig" type="controller" method="POST" />
+		<action name="dispStarpointAdminIndex" type="view" />
 	</actions>
 	<menus>
 		<menu name="starpoint" type="all">

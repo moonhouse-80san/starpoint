@@ -26,6 +26,14 @@ class StarpointAdminController extends Starpoint
             $config->target_modules = array();
         }
         
+        // 디버깅
+        debugPrint($vars);
+        
+        // 추가 설정 저장 - 기본값 설정
+        $config->display_type = isset($vars->display_type) ? $vars->display_type : 'star';
+        $config->max_rating = isset($vars->max_rating) ? (int)$vars->max_rating : 5;
+        $config->allow_guest = isset($vars->allow_guest) && $vars->allow_guest == 'Y' ? 'Y' : 'N';
+        
         // 설정 저장
         $oModuleController = getController('module');
         $output = $oModuleController->insertModuleConfig('starpoint', $config);
@@ -50,5 +58,6 @@ class StarpointAdminController extends Starpoint
     {
         // 캐시 파일 삭제
         FileHandler::removeFilesInDir('./files/cache/module_info');
+        FileHandler::removeFilesInDir('./files/cache/actions');
     }
 }
