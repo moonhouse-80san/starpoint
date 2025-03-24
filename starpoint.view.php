@@ -9,7 +9,7 @@ class starpointView extends starpoint
 	/**
 	 * @brief 초기화
 	 */
-	function init()
+	public function init()
 	{
 		// Set template path
 		$this->setTemplatePath($this->module_path.'tpl');
