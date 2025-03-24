@@ -3,5 +3,5 @@
 	<column name="document_srl" type="number" size="11" notnull="notnull" index="idx_document_srl" />
 	<column name="member_srl" type="number" size="11" notnull="notnull" index="idx_document_srl" />
 	<column name="star_rate" type="number" size="11" notnull="notnull" />
-	<column name="regdate" type="date" notnull="notnull" index="idx_regdate" />
+	<column name="regdate" type="char" size="14" notnull="notnull" index="idx_regdate" />
 </table>
