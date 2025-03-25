@@ -3,7 +3,7 @@
 	justify-content: center; /* 컨테이너 전체 중앙 정렬 */
 }
 .rating-widget {
-	margin: 10px;
+	margin: 10px 0;
 	padding: 5px 15px;
 	border: 1px solid #e0e0e0;
 	border-radius: 5px;
@@ -27,21 +27,20 @@
 	padding: 10px;
 }
 .rating-widget .rating-average {
-
 	display: inline-block; /* 인라인 블록으로 변경 */
 	margin: 0 10px;
 }
 .rating-widget .labels {
 	color: #666; 
 	font-size: 14px; 
-	margin-left: 20px;
+	margin-left: 10px;
 }
 .rating-widget .stars {
 	display: inline-flex; /* 인라인 플렉스로 변경 */
 	align-items: center;
 }
 .rating-widget .star {
-	font-size: 16px;
+	font-size: 18px;
 	color: #ddd;
 	margin-right: 5px;
 	cursor: default;
@@ -69,12 +68,25 @@
 .rating-widget .my-rating {
 	display: inline-flex; /* 인라인 플렉스로 변경 */
 	align-items: center;
-
 	margin: 0 10px;
 }
 .rating-widget .star-select {
+	position: relative;
 	cursor: pointer;
 	transition: transform 0.1s, color 0.2s;
+}
+.rating-widget .hover-score {
+	position: absolute;
+	top: -50%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: black;
+	font-size: 12px;
+	white-space: nowrap;
+	display: none;
+}
+.rating-widget .star-select:hover .hover-score {
+	display: block;
 }
 .rating-widget .star-select:hover, 
 .rating-widget .star-select.hover {
@@ -121,18 +133,16 @@
 	text-align: center;
 }
 .rating-widget .my-rating-display {
-
 	display: inline-flex; /* 인라인 플렉스로 변경 */
 	align-items: center;
 }
 
 /* 반응형 스타일 - 화면이 너무 좁을 경우 줄바꿈 허용 */
 @media (max-width: 768px) {
-  .rating-widget {
-    flex-wrap: wrap;
-  }
-  
-  .rating-title, .rating-average, .rating-form, .login-required, .already-rated {
-    margin-bottom: 5px;
-  }
+	.rating-widget {
+		flex-wrap: wrap;
+	}
+	.rating-title, .rating-average, .rating-form, .login-required, .already-rated {
+		margin-bottom: 5px;
+	}
 }

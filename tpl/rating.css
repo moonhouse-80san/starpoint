@@ -1,15 +1,15 @@
 .rating-container {
-  display: flex;
-  justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .rating-widget {
-  margin:10px;
-  padding: 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  max-width:450px;
+	margin:10px;
+	padding: 15px;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	max-width:450px;
 }
 
 .rating-widget .rating-title {
@@ -87,10 +87,23 @@
 }
 
 .rating-widget .star-select {
+	position: relative;
 	cursor: pointer;
 	transition: transform 0.1s, color 0.2s;
 }
-
+.rating-widget .hover-score {
+	position: absolute;
+	top: -50%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: black;
+	font-size: 12px;
+	white-space: nowrap;
+	display: none;
+}
+.rating-widget .star-select:hover .hover-score {
+	display: block;
+}
 .rating-widget .star-select:hover, 
 .rating-widget .star-select.hover {
 	color: #ffb400;

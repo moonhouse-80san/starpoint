@@ -72,20 +72,28 @@
 		// 별점 선택 기능
 		let selectedRating = 0;
 		
+		// 호버 시 점수 표시를 위한 요소 추가
+		$('.star-select').append('<span class="hover-score"></span>');
+		
 		// 별 위에 마우스 올렸을 때
 		$('.star-select').hover(
 			function() {
 				const value = $(this).data('value');
+				
 				// 마우스 오버 시 현재 별과 이전 별들 강조
 				$('.star-select').each(function() {
 					if($(this).data('value') <= value) {
 						$(this).addClass('hover');
+						
+						// 점수 표시
+						$(this).find('.hover-score').text(value);
 					}
 				});
 			},
 			function() {
 				// 마우스 아웃 시 선택한 것 외에 모두 초기화
 				$('.star-select').removeClass('hover');
+				$('.star-select .hover-score').text('');
 				
 				// 선택된 별 유지
 				if(selectedRating > 0) {
