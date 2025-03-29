@@ -8,14 +8,14 @@
 	padding: 15px;
 	border: 1px solid #e0e0e0;
 	border-radius: 5px;
-	background-color: #f9f9f9;
+	background-color: #000;
+	color:#fff
 	max-width:450px;
 }
 
 .rating-widget .rating-title {
 	font-size: 15px;
 	font-weight: bold;
-	color: #333;
 }
 
 .rating-widget .rating-stats {
@@ -35,7 +35,6 @@
 
 .rating-widget .label {
 	min-width:80px; 
-	color:#666; 
 	font-size:14px; 
 }
 
@@ -46,7 +45,6 @@
 
 .rating-widget .star {
 	font-size: 20px;
-	color: #ddd;
 	margin-right: 5px;
 	cursor: default;
 }
@@ -72,7 +70,6 @@
 .rating-widget .score {
 	margin-left: 8px;
 	font-weight: bold;
-	color: #333;
 	font-size: 16px;
 }
 
@@ -91,6 +88,7 @@
 	cursor: pointer;
 	transition: transform 0.1s, color 0.2s;
 }
+
 .rating-widget .hover-score {
 	position: absolute;
 	top: -50%;
@@ -101,9 +99,12 @@
 	white-space: nowrap;
 	display: none;
 }
+
 .rating-widget .star-select:hover .hover-score {
 	display: block;
+	color:#fff;
 }
+
 .rating-widget .star-select:hover, 
 .rating-widget .star-select.hover {
 	color: #ffb400;
@@ -147,7 +148,7 @@
 	padding: 10px;
 	background-color: #f1f1f1;
 	border-radius: 4px;
-	color: #666;
+	color: #000;
 	text-align: center;
 	font-size: 14px;
 }

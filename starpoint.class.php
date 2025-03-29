@@ -73,7 +73,10 @@ class Starpoint extends ModuleObject
 		// 별점 모듈 템플릿에 추가할 트리거 확인
 		if(!$oModuleModel->getTrigger('document.showDocument', 'starpoint', 'controller', 'triggerShowDocument', 'after'))
 			return true;
-		
+
+		$oDB = &DB::getInstance();
+		if(!$oDB->isColumnExists('document_star', 'regdate')) return true;
+
 		return false;
 	}
 
@@ -96,7 +99,13 @@ class Starpoint extends ModuleObject
 		// 별점 모듈 템플릿에 추가할 트리거 등록
 		if(!$oModuleModel->getTrigger('document.showDocument', 'starpoint', 'controller', 'triggerShowDocument', 'after'))
 			$oModuleController->insertTrigger('document.showDocument', 'starpoint', 'controller', 'triggerShowDocument', 'after');
-		
+
+		$oDB = &DB::getInstance();
+		if(!$oDB->isColumnExists('document_star', 'regdate')) 
+		{
+			$oDB->addColumn('document_star', 'regdate', 'date', 'idx_regdate');
+		}
+
 		return new BaseObject();
 	}
 

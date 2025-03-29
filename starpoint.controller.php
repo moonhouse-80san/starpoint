@@ -29,8 +29,8 @@ class StarpointController extends Starpoint
 		}
 
 		// 별점은 1~5점 사이만 허용
-		if ($star_srl < 1 || $star_srl > 5) {
-			return new BaseObject(-1, '별점은 1~5점 사이여야 합니다.');
+		if ($star_srl < 1 || $star_srl > 10) {
+			return new BaseObject(-1, '별점은 1~10점 사이여야 합니다.');
 		}
 		
 		// 게시글 존재 확인
