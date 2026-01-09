@@ -1,52 +1,51 @@
 .rating-container {
 	display: flex;
-	justify-content: center; /* 컨테이너 전체 중앙 정렬 */
+	justify-content: flex-end;
+	color:#fff
 }
 
 .rating-widget {
-	margin: 10px 0;
-	padding: 5px 15px;
+	margin:10px;
+	padding: 15px;
 	border: 1px solid #e0e0e0;
 	border-radius: 5px;
 	background-color: #000;
-	color:#fff;
-	min-width:450px;
-	text-align: center; /* 위젯 내부 텍스트 중앙 정렬 */
-}
-
-.rating-widget span { 
-	line-height: 35px; 
+	max-width:450px;
 }
 
 .rating-widget .rating-title {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: bold;
-	display: inline-block;
 }
 
 .rating-widget .rating-stats {
 	background: #f0f0f0;
 	border-radius: 4px;
 	padding: 10px;
+	margin-bottom: 15px;
 }
 
 .rating-widget .rating-average {
-	display: inline-block;
-	margin: 0 10px;
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+	border-top: 1px solid #e0e0e0;
+	padding-top:15px;
 }
 
-.rating-widget .labels {
-	font-size: 14px; 
-	margin-left: 10px;
+.rating-widget .label {
+	min-width:80px; 
+	font-size:14px; 
+	color:#000
 }
 
 .rating-widget .stars {
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 }
 
 .rating-widget .star {
-	font-size: 18px;
+	font-size: 20px;
 	margin-right: 5px;
 	cursor: default;
 }
@@ -71,13 +70,18 @@
 
 .rating-widget .score {
 	margin-left: 8px;
-	font-size: 14px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.rating-widget .rating-form {
+	margin-top: 20px;
 }
 
 .rating-widget .my-rating {
-	display: inline-flex;
+	display: flex;
 	align-items: center;
-	margin: 0 10px;
+	margin-bottom: 15px;
 }
 
 .rating-widget .star-select {
@@ -114,17 +118,17 @@
 
 .rating-widget .selected-rating {
 	margin-left: 10px;
-	font-size: 14px;
+	font-weight: bold;
+	font-size: 16px;
 }
 
 .rating-widget .submit-button {
 	text-align: center;
-	margin-left: 10px;
-	display: inline-block;
+	margin-top: 10px;
 }
 
 .rating-widget .submit-button .spb {
-	padding: 5px 10px !important;
+	padding: 8px 20px !important;
 	background-color: #4a89dc !important;
 	color: white;
 	border: none;
@@ -132,16 +136,17 @@
 	font-size: 14px;
 	cursor: pointer;
 	transition: background-color 0.2s;
-	margin: 0 auto;
+	margin:0 auto;
 }
 
 .rating-widget .submit-button .spb:hover {
 	background-color: #3a79cc !important;
 }
 
+.rating-widget .already-rated,
 .rating-widget .login-required {
-	margin-top: 0px;
-	padding: 5px;
+	margin-top: 15px;
+	padding: 10px;
 	background-color: #f1f1f1;
 	border-radius: 4px;
 	color: #000;
@@ -149,23 +154,6 @@
 	font-size: 14px;
 }
 
-.rating-widget .already-rated {
-	display: inline-block;
-	text-align: center;
-}
-
-.rating-widget .my-rating-display {
-	display: inline-flex;
-	align-items: center;
-}
-
-/* 반응형 스타일 - 화면이 너무 좁을 경우 줄바꿈 허용 */
-@media (max-width: 768px) {
-	.rating-widget {
-		flex-wrap: wrap;
-		min-width:90%;
-	}
-	.rating-title, .rating-average, .rating-form, .login-required, .already-rated {
-		margin-bottom: 5px;
-	}
-}
+.vm_body { background:#000; color:#fff; }
+.vm_top { background:#000; color:#fff; }
+.vm_tr { background:#f0f0f0; color:#000; }

@@ -93,4 +93,23 @@ class StarpointModel extends Starpoint
 
 		return $output->data;
 	}
+
+	/**
+	 * @brief 문서에 평점을 준 회원 목록 가져오기
+	 * @param int $document_srl 문서 일련번호
+	 * @return array 평점을 준 회원 목록
+	 */
+	public function getRatingList($document_srl) {
+		$args = new stdClass();
+		$args->document_srl = $document_srl;
+		$args->list_count = 100; // 최대 100명
+
+		$output = executeQueryArray('starpoint.getRatingList', $args);
+		
+		if (!$output->toBool()) {
+			return array();
+		}
+
+		return $output->data ? $output->data : array();
+	}
 }

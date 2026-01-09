@@ -8,7 +8,8 @@
 	padding: 5px 15px;
 	border: 1px solid #e0e0e0;
 	border-radius: 5px;
-	background-color: #f9f9f9;
+	background-color: #000;
+	color:#fff;
 	min-width:450px;
 	text-align: center; /* 위젯 내부 텍스트 중앙 정렬 */
 }
@@ -19,7 +20,6 @@
 
 .rating-widget .rating-title {
 	font-size: 14px;
-	color: #333;
 	font-weight: bold;
 	display: inline-block;
 }
@@ -36,7 +36,6 @@
 }
 
 .rating-widget .labels {
-	color: #666; 
 	font-size: 14px; 
 	margin-left: 10px;
 }
@@ -48,7 +47,6 @@
 
 .rating-widget .star {
 	font-size: 18px;
-	color: #ddd;
 	margin-right: 5px;
 	cursor: default;
 }
@@ -73,7 +71,6 @@
 
 .rating-widget .score {
 	margin-left: 8px;
-	color: #333;
 	font-size: 14px;
 }
 
@@ -102,6 +99,7 @@
 
 .rating-widget .star-select:hover .hover-score {
 	display: block;
+	color:#fff;
 }
 
 .rating-widget .star-select:hover, 
@@ -146,7 +144,7 @@
 	padding: 5px;
 	background-color: #f1f1f1;
 	border-radius: 4px;
-	color: #666;
+	color: #000;
 	text-align: center;
 	font-size: 14px;
 }
@@ -160,6 +158,10 @@
 	display: inline-flex;
 	align-items: center;
 }
+
+.vm_body { background:#000; color:#fff; }
+.vm_top { background:#000; color:#fff; }
+.vm_tr { background:#f0f0f0; color:#000; }
 
 /* 반응형 스타일 - 화면이 너무 좁을 경우 줄바꿈 허용 */
 @media (max-width: 768px) {
