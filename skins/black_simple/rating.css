@@ -162,7 +162,7 @@
 .vm_body { background:#000; color:#fff; }
 .vm_top { background:#000; color:#fff; }
 .vm_tr { background:#f0f0f0; color:#000; }
-.vm_area { width:fit-content; margin:0 auto; background:#000; font-size:13px; color:#fff; padding:5px 10px; border-radius:5px; }
+.vm_area { width:fit-content; margin:0 auto 10px; background:#000; font-size:13px; color:#fff; padding:0 10px; border-radius:5px; }
 .vm_box { text-align:center; }
 
 /* 반응형 스타일 - 화면이 너무 좁을 경우 줄바꿈 허용 */
