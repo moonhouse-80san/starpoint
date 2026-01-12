@@ -1,5 +1,5 @@
 <load target="rating.css" />
-<load target="rating.js" />
+<load target="../rating.js" />
 
 {@
 	$my_s = 'N';
@@ -66,70 +66,3 @@
 		</div>
 	</div>
 </div>
-
-<script>
-	jQuery(function($) {
-		// 별점 선택 기능
-		let selectedRating = 0;
-		
-		// 호버 시 점수 표시를 위한 요소 추가
-		$('.star-select').append('<span class="hover-score"></span>');
-		
-		// 별 위에 마우스 올렸을 때
-		$('.star-select').hover(
-			function() {
-				const value = $(this).data('value');
-				
-				// 마우스 오버 시 현재 별과 이전 별들 강조
-				$('.star-select').each(function() {
-					if($(this).data('value') <= value) {
-						$(this).addClass('hover');
-						
-						// 점수 표시
-						$(this).find('.hover-score').text(value);
-					}
-				});
-			},
-			function() {
-				// 마우스 아웃 시 선택한 것 외에 모두 초기화
-				$('.star-select').removeClass('hover');
-				$('.star-select .hover-score').text('');
-				
-				// 선택된 별 유지
-				if(selectedRating > 0) {
-					$('.star-select').each(function() {
-						if($(this).data('value') <= selectedRating) {
-							$(this).addClass('selected');
-						}
-					});
-				}
-			}
-		);
-		
-		// 별 클릭 시
-		$('.star-select').click(function() {
-			selectedRating = $(this).data('value');
-			
-			// 모든 별 초기화 후 선택한 별까지 채우기
-			$('.star-select').removeClass('selected');
-			$('.star-select').each(function() {
-				if($(this).data('value') <= selectedRating) {
-					$(this).addClass('selected');
-				}
-			});
-			
-			// 선택된 점수 표시
-			$('#selected-value').text(selectedRating);
-		});
-		
-		// 평가하기 버튼 클릭
-		$('#submit-rating').click(function() {
-			if(selectedRating === 0) {
-				alert('평점을 선택해주세요.');
-				return;
-			}
-			
-			doRate({$oDocument->document_srl}, selectedRating);
-		});
-	});
-</script>

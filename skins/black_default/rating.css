@@ -157,5 +157,5 @@
 .vm_body { background:#000; color:#fff; }
 .vm_top { background:#000; color:#fff; }
 .vm_tr { background:#f0f0f0; color:#000; }
-.vm_area { width:fit-content; margin:0 auto 10px; background:#000; font-size:13px; color:#fff; padding:0 10px; border-radius:5px; }
+.vm_area { width:fit-content; margin:0 auto 10px; background:#000; font-size:13px; color:#fff; padding:0 10px; border-radius:5px; border: 1px solid #e0e0e0; }
 .vm_box { text-align:center; }
