@@ -1,0 +1,127 @@
+<div class="x_page-header">
+	<h1>게시글 별 평점 모듈 설치 메뉴얼</h1>
+</div>
+
+<div class="x_form-horizontal">
+	<section class="section">
+		<h2>모듈 설치</h2>
+		<div class="x_control-group">
+			<img src="./img/st_01.jpg">
+			<div>DB 테이블 생성을 클릭하여 모듈을 설치합니다.</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<h2>별점 사용 게시판 설정 - <a href="https://moonhouse.co.kr/xemy/598200" target="_blank" style="font-size:14px; color:#000">원본글</a></h2>
+		<div class="x_control-group">
+			<div style="font-size:16px; font-weight:bold;">▶️ ️게시판 스킨에 설치</div><br>
+			<div class="">
+				<p class="x_help-block">별점 기능을 사용할 게시판 스킨에 아래의 코드를 작성합니다.</p>
+				<p class="x_help-block">sketchbook5(스케치북5) 스킨을 예제로 삼습니다. ./modules/board/skins/sketchbook5</p>
+				<p></p>
+				<div>
+					<p class="x_help-block">1. 모듈 지정 설정</p>
+					<p class="x_help-block">skin.xml 에 추가</p>
+					<div style="font-family:line-height: 1.6; white-space: normal; margin: 5px; padding: 10px; background-color: rgb(247, 247, 246); color: rgb(0, 0, 0); border: 1px solid rgb(153, 153, 153);" text_color="000000">
+						<p>&lt;var name=&quot;star_point&quot; type=&quot;radio&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;title&gt;게시글 별 평점 모듈 사용&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;description&gt;게시글 별 평점 모듈이 설치되어 있어야 합니다.<br />
+						&nbsp;&nbsp; &nbsp;https://moonhouse.co.kr/xemy/598200&lt;/description&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;모듈 설치 안됨(기본)&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;Y&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;모듈 설치&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&lt;/var&gt;<br />
+						&lt;var name=&quot;starpoint_skin&quot; type=&quot;radio&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;title&gt;　┖ 스킨&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;description/&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;Simple(기본)&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;d&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;Default&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;b_s&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;Black Simple&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;b_d&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;Black Default&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&lt;/var&gt;<br />
+						&lt;var name=&quot;starpoint_text&quot; type=&quot;text&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;title&gt;　┖ 타이틀&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;description&gt;상단에 들어갈 타이틀(기본문구 : 글)&lt;/description&gt;<br />
+						&lt;/var&gt;<br />
+						&lt;var name=&quot;vote_members&quot; type=&quot;radio&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;title&gt;　┖ 평가 회원 출력&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;description&gt;평점을 투표한 회원 출력&lt;/description&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;출력(기본)&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;N&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;출력 안함&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;A&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;관리자만 출력&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&lt;/var&gt;<br />
+						&lt;var name=&quot;vm_form&quot; type=&quot;radio&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;title&gt;　┖ 평가 회원 출력 형태&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;description&gt;평점을 투표한 회원 출력의 형태를 선택&lt;/description&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;Simple(기본)&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;D&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;Default&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;options value=&quot;T&quot;&gt;<br />
+						&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;title&gt;Simple + Default(관리자)&lt;/title&gt;<br />
+						&nbsp;&nbsp; &nbsp;&lt;/options&gt;<br />
+						&lt;/var&gt;</p>
+					</div>
+				</div><br>
+
+				<div>
+					<p class="x_help-block">2. 게시판 스킨의 본문글 하단에 모듈 스킨 설정</p>
+					<p class="x_help-block">_read.html 에 추가</p>
+					<div style="font-family:line-height: 1.6; white-space: normal; margin: 5px; padding: 10px; background-color: rgb(247, 247, 246); color: rgb(0, 0, 0); border: 1px solid rgb(153, 153, 153);" text_color="000000">
+						<p>&lt;!--// 글 별평점 모듈 --&gt;<br />
+						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;&#39;&quot; target=&quot;/modules/starpoint/skins/simple/rating.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;d&#39;&quot; target=&quot;/modules/starpoint/skins/default/rating.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;b_s&#39;&quot; target=&quot;/modules/starpoint/skins/black_simple/rating.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;b_d&#39;&quot; target=&quot;/modules/starpoint/skins/black_default/rating.html&quot; /&gt;</p>
+
+						<p>&lt;!-- 평가 회원 출력 --&gt;<br />
+						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;vote_members ==&#39;&#39;&quot; target=&quot;vote_members.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;vote_members ==&#39;A&#39; &amp;&amp; $logged_info-&gt;is_admin == &#39;Y&#39;&quot; target=&quot;vote_members.html&quot; /&gt;
+						</p>
+					</div>
+				</div><br>
+
+				<div>
+					<p class="x_help-block">3. 게시판 스킨에 새로 생성된 vote_members.html 파일 추가</p>
+					<p class="x_help-block"><a href="https://mbg1346.inour.net/index.php?module=file&act=procFileDownload&file_srl=829&sid=cf22d4f0d26c412d43293691a04041aa">vote_members.html 다운로드</a></p>
+				</div>
+			</div><br>
+		</div>
+
+		<div class="x_control-group">
+			<div style="font-size:16px; font-weight:bold;">▶️ 게시판 설정</div><br>
+			<div class="">
+				<p class="x_help-block">1. 모듈 스킨 - Simple, Default, black_simple, black_default</p>
+				<p class="x_help-block">2. 평가 회원 출력 - 출력(기본), 출력 안함, 관리자만 출력</p>
+				<p class="x_help-block">3. 평가 회원 출력 형태 - Simple, Default, Simple + Default(관리자)</p>
+				<img src="./img/st_02.png">
+				<div>
+					<br><p class="x_help-block">[Default]</p>
+					<img src="./img/st_03.png"><br>
+					<br><p class="x_help-block">[Simple - 평점은 관리자만 보임]</p>
+					<img src="./img/st_04.png"><br>
+					<br><p class="x_help-block">[Simple + Default(관리자) - Simple은 모두에게 출력 Default형은 관리자만 출력]</p>
+					<img src="./img/st_05.png">
+				</div>
+		</div>
+	</section>
+</div>

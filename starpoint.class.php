@@ -3,7 +3,7 @@
 /**
  * 게시글 별점리뷰
  *
- * Copyright (c) ICETEA
+ * Copyright 80san
  *
  * Generated with https://www.poesis.dev/tools/modulegen
  */
