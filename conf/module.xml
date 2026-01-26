@@ -4,6 +4,7 @@
 	</grants>
 	<actions>
 		<action name="procStarpointDoRateDocument" type="controller" method="POST" />
+		<action name="procStarpointDeleteRating" type="controller" method="POST" />
 		<action name="dispStarpointAdminConfig" type="view" standalone="true" admin_index="true" />
 		<action name="procStarpointAdminInsertConfig" type="controller" standalone="true" />
 	</actions>

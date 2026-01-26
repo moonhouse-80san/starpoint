@@ -139,6 +139,15 @@
 	background-color: #3a79cc !important;
 }
 
+/* 취소 버튼 스타일 */
+.rating-widget .submit-button .spb.cancel-btn {
+	background-color: #e74c3c !important;
+}
+
+.rating-widget .submit-button .spb.cancel-btn:hover {
+	background-color: #c0392b !important;
+}
+
 .rating-widget .login-required {
 	margin-top: 0px;
 	padding: 5px;

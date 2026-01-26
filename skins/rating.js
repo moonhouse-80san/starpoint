@@ -1,9 +1,22 @@
 // 문서에 별점 평가하기
 function doRate(document_srl, rate_srl){
-	if (!confirm("한번 평가한 점수는 취소되지 않습니다.\n정말 평가 하시겠습니까?")) return;
+	if (!confirm("정말 평가 하시겠습니까?")) return;
 	exec_json("starpoint.procStarpointDoRateDocument", { doc_srl: document_srl, star_srl: rate_srl }, function () {
-		alert("평가 완료 하였습니다. ");
+		alert("평가 완료 하였습니다.");
 		location.reload();
+	});
+}
+
+// 별점 평가 취소하기
+function cancelRate(document_srl) {
+	if (!confirm("평가를 취소하시겠습니까?")) return;
+	exec_json("starpoint.procStarpointDeleteRating", { document_srl: document_srl }, function (ret) {
+		if (ret.error == 0) {
+			alert("평가가 취소되었습니다.");
+			location.reload();
+		} else {
+			alert("평가 취소에 실패했습니다: " + ret.message);
+		}
 	});
 }
 
@@ -16,7 +29,7 @@ jQuery(function($){
 		$('.star-select').append('<span class="hover-score"></span>');
 	}
 	
-	// .star-select 방식 (첫 번째 스크립트 방식)
+	// .star-select 방식
 	$('.star-select').hover(
 		function() {
 			const value = $(this).data('value');
@@ -63,7 +76,7 @@ jQuery(function($){
 	
 	// 평가하기 버튼 클릭
 	$('#submit-rating').click(function() {
-		const documentSrl = $(this).data('document-srl') || $('input[name="document_srl"]').val();
+		const documentSrl = $(this).data('document-srl');
 		
 		if(selectedRating === 0) {
 			alert('평점을 선택해주세요.');
@@ -73,15 +86,19 @@ jQuery(function($){
 		doRate(documentSrl, selectedRating);
 	});
 	
-	// .rating-form 방식 (두 번째 스크립트 방식)
+	// 평가 취소 버튼 클릭
+	$('#cancel-rating').click(function() {
+		const documentSrl = $(this).data('document-srl');
+		cancelRate(documentSrl);
+	});
+	
+	// .rating-form 방식 (기존 코드 유지)
 	$('.rating-form .stars label').hover(
 		function() {
-			// 마우스 오버 시 현재 별과 이전 별들 강조
 			$(this).find('.star').addClass('filled');
 			$(this).prevAll('label').find('.star').addClass('filled');
 		},
 		function() {
-			// 마우스 아웃 시 선택된 별 외에는 원래대로
 			if(!$(this).find('input').prop('checked')) {
 				$(this).find('.star').removeClass('filled');
 			}
@@ -93,24 +110,16 @@ jQuery(function($){
 		}
 	);
 	
-	// 별 클릭 시 처리
 	$('.rating-form .stars label').click(function(){
-		// 모든 별 초기화
 		$('.rating-form .stars label .star').removeClass('filled');
-		
-		// 선택한 별과 이전 별들 채우기
 		$(this).find('.star').addClass('filled');
 		$(this).prevAll('label').find('.star').addClass('filled');
-		
-		// 선택된 값 확인용
 		var rating = $(this).find('input').val();
 		console.log('선택한 평점: ' + rating);
 	});
 	
-	// 폼 제출 대신 AJAX 사용
 	$('.rating-form form').submit(function(e){
 		e.preventDefault();
-		
 		var document_srl = $(this).find('input[name="document_srl"]').val();
 		var rating = $(this).find('input[name="rating"]:checked').val();
 		

@@ -36,7 +36,7 @@
 .rating-widget .label {
 	min-width:80px; 
 	font-size:14px; 
-	color:#000
+	color:#fff;
 }
 
 .rating-widget .stars {
@@ -141,6 +141,17 @@
 
 .rating-widget .submit-button .spb:hover {
 	background-color: #3a79cc !important;
+}
+
+/* 취소 버튼 스타일 */
+.rating-widget .submit-button .spb.cancel-btn {
+	margin:10px auto 0;
+	background-color: #e74c3c !important;
+	display: block;
+}
+
+.rating-widget .submit-button .spb.cancel-btn:hover {
+	background-color: #c0392b !important;
 }
 
 .rating-widget .already-rated,

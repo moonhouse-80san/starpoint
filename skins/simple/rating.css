@@ -1,6 +1,6 @@
 .rating-container {
 	display: flex;
-	justify-content: center; /* 컨테이너 전체 중앙 정렬 */
+	justify-content: center;
 }
 
 .rating-widget {
@@ -10,7 +10,7 @@
 	border-radius: 5px;
 	background-color: #f9f9f9;
 	min-width:450px;
-	text-align: center; /* 위젯 내부 텍스트 중앙 정렬 */
+	text-align: center;
 }
 
 .rating-widget span { 
@@ -141,6 +141,15 @@
 	background-color: #3a79cc !important;
 }
 
+/* 취소 버튼 스타일 */
+.rating-widget .submit-button .spb.cancel-btn {
+	background-color: #e74c3c !important;
+}
+
+.rating-widget .submit-button .spb.cancel-btn:hover {
+	background-color: #c0392b !important;
+}
+
 .rating-widget .login-required {
 	margin-top: 0px;
 	padding: 5px;
@@ -167,7 +176,6 @@
 .vm_area { width:fit-content; margin:0 auto 10px; background:#f9f9f9; border:1px solid #e0e0e0; font-size:13px; color:#666; padding:0 10px; border-radius:5px; border: 1px solid #e0e0e0; }
 .vm_box { text-align:center; }
 
-/* 반응형 스타일 - 화면이 너무 좁을 경우 줄바꿈 허용 */
 @media (max-width: 768px) {
 	.rating-widget {
 		flex-wrap: wrap;
