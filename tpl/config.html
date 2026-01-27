@@ -94,17 +94,12 @@
 						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;b_d&#39;&quot; target=&quot;/modules/starpoint/skins/black_default/rating.html&quot; /&gt;</p>
 
 						<p>&lt;!-- 평가 회원 출력 --&gt;<br />
-						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;vote_members ==&#39;&#39;&quot; target=&quot;vote_members.html&quot; /&gt;<br />
-						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;vote_members ==&#39;A&#39; &amp;&amp; $logged_info-&gt;is_admin == &#39;Y&#39;&quot; target=&quot;vote_members.html&quot; /&gt;
+						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;vote_members ==&#39;&#39;&quot; target=&quot;/modules/starpoint/skins/vote_members.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;vote_members ==&#39;A&#39; &amp;&amp; $logged_info-&gt;is_admin == &#39;Y&#39;&quot; target=&quot;/modules/starpoint/skins/vote_members.html&quot; /&gt;
 						</p>
 					</div>
-				</div><br>
-
-				<div>
-					<p class="x_help-block">3. 게시판 스킨에 새로 생성된 vote_members.html 파일 추가</p>
-					<p class="x_help-block"><a href="https://mbg1346.inour.net/index.php?module=file&act=procFileDownload&file_srl=837&sid=bab57c1344c20aec4c4f90e6bf43d70b">vote_members.html 다운로드</a></p>
 				</div>
-			</div><br>
+			</div>
 		</div>
 
 		<div class="x_control-group">
