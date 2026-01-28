@@ -5,10 +5,10 @@
 
 <load target="vote_members.css" />
 <!--@if($rating_list && count($rating_list) > 0)-->
-	<!--@if($mi->vm_form =='D')-->
-		<div class="vm_area1" style="display:flex; <!--@if($mi->starpoint_skin =='' || $mi->starpoint_skin =='b_s')-->justify-content:center;<!--@elseif($mi->starpoint_skin =='d' || $mi->starpoint_skin =='b_d')-->justify-content:flex-end; margin-right:10px;<!--@end-->">
+	<!--@if($module_info->vm_form =='D')-->
+		<div class="vm_area1" style="display:flex; <!--@if($module_info->starpoint_skin =='' || $module_info->starpoint_skin =='b_s')-->justify-content:center;<!--@elseif($module_info->starpoint_skin =='d' || $module_info->starpoint_skin =='b_d')-->justify-content:flex-end; margin-right:10px;<!--@end-->">
 			<div class="vm_body">
-				<div class="vm_admin" cond="$mi->vote_members =='A' && $logged_info->is_admin == 'Y'" onclick="jQuery('#rating_detail_list').slideToggle();">
+				<div class="vm_admin" cond="$module_info->vote_members =='A' && $logged_info->is_admin == 'Y'" onclick="jQuery('#rating_detail_list').slideToggle();">
 					<strong>👤 관리자 전용</strong>
 				</div>
 				<div class="vm_top" onclick="jQuery('#rating_detail_list').slideToggle();">
@@ -55,8 +55,8 @@
 				</div>
 			</div>
 		</div>
-	<!--@elseif($mi->vm_form =='T')-->
-		<div class="vm_area" style="<!--@if($mi->starpoint_skin =='' || $mi->starpoint_skin =='b_s')-->justify-content:center;<!--@elseif($mi->starpoint_skin =='d' || $mi->starpoint_skin =='b_d')-->float:right; margin-right:10px;<!--@end-->">
+	<!--@elseif($module_info->vm_form =='T')-->
+		<div class="vm_area" style="<!--@if($module_info->starpoint_skin =='' || $module_info->starpoint_skin =='b_s')-->justify-content:center;<!--@elseif($module_info->starpoint_skin =='d' || $module_info->starpoint_skin =='b_d')-->float:right; margin-right:10px;<!--@end-->">
 			<div class="vm_box">
 				<strong style="font-weight:bold;">평가 참여 :</strong>
 				<!--@foreach($rating_list as $idx => $rating)-->
@@ -136,7 +136,7 @@
 			<!--@end-->
 		</div>
 	<!--@else-->
-		<div class="vm_area" style="display:flex; <!--@if($mi->starpoint_skin =='' || $mi->starpoint_skin =='b_s')-->justify-content:center;<!--@elseif($mi->starpoint_skin =='d' || $mi->starpoint_skin =='b_d')-->justify-content:flex-end; margin-right:10px;<!--@end-->">
+		<div class="vm_area" style="display:flex; <!--@if($module_info->starpoint_skin =='' || $module_info->starpoint_skin =='b_s')-->justify-content:center;<!--@elseif($module_info->starpoint_skin =='d' || $module_info->starpoint_skin =='b_d')-->justify-content:flex-end; margin-right:10px;<!--@end-->">
 			<div class="vm_box">
 				<strong style="font-weight:bold;">평가 참여 :</strong>
 				<!--@foreach($rating_list as $idx => $rating)-->

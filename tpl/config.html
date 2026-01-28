@@ -88,14 +88,14 @@
 					<p class="x_help-block">_read.html 에 추가</p>
 					<div style="font-family:line-height: 1.6; white-space: normal; margin: 5px; padding: 10px; background-color: rgb(247, 247, 246); color: rgb(0, 0, 0); border: 1px solid rgb(153, 153, 153);" text_color="000000">
 						<p>&lt;!--// 글 별평점 모듈 --&gt;<br />
-						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;&#39;&quot; target=&quot;/modules/starpoint/skins/simple/rating.html&quot; /&gt;<br />
-						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;d&#39;&quot; target=&quot;/modules/starpoint/skins/default/rating.html&quot; /&gt;<br />
-						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;b_s&#39;&quot; target=&quot;/modules/starpoint/skins/black_simple/rating.html&quot; /&gt;<br />
-						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;starpoint_skin ==&#39;b_d&#39;&quot; target=&quot;/modules/starpoint/skins/black_default/rating.html&quot; /&gt;</p>
+						&lt;include cond=&quot;!$module_info-&gt;star_point ==&#39;&#39; &amp;&amp; $module_info-&gt;starpoint_skin ==&#39;&#39;&quot; target=&quot;/modules/starpoint/skins/simple/rating.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$module_info-&gt;star_point ==&#39;&#39; &amp;&amp; $module_info-&gt;starpoint_skin ==&#39;d&#39;&quot; target=&quot;/modules/starpoint/skins/default/rating.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$module_info-&gt;star_point ==&#39;&#39; &amp;&amp; $module_info-&gt;starpoint_skin ==&#39;b_s&#39;&quot; target=&quot;/modules/starpoint/skins/black_simple/rating.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$module_info-&gt;star_point ==&#39;&#39; &amp;&amp; $module_info-&gt;starpoint_skin ==&#39;b_d&#39;&quot; target=&quot;/modules/starpoint/skins/black_default/rating.html&quot; /&gt;</p>
 
 						<p>&lt;!-- 평가 회원 출력 --&gt;<br />
-						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;vote_members ==&#39;&#39;&quot; target=&quot;/modules/starpoint/skins/vote_members.html&quot; /&gt;<br />
-						&lt;include cond=&quot;!$mi-&gt;star_point ==&#39;&#39; &amp;&amp; $mi-&gt;vote_members ==&#39;A&#39; &amp;&amp; $logged_info-&gt;is_admin == &#39;Y&#39;&quot; target=&quot;/modules/starpoint/skins/vote_members.html&quot; /&gt;
+						&lt;include cond=&quot;!$module_info-&gt;star_point ==&#39;&#39; &amp;&amp; $module_info-&gt;vote_members ==&#39;&#39;&quot; target=&quot;/modules/starpoint/skins/vote_members.html&quot; /&gt;<br />
+						&lt;include cond=&quot;!$module_info-&gt;star_point ==&#39;&#39; &amp;&amp; $module_info-&gt;vote_members ==&#39;A&#39; &amp;&amp; $logged_info-&gt;is_admin == &#39;Y&#39;&quot; target=&quot;/modules/starpoint/skins/vote_members.html&quot; /&gt;
 						</p>
 					</div>
 				</div>
